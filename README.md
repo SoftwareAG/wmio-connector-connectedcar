@@ -3,10 +3,10 @@ This sample demonstrates how to build a custom connector for wmio. It includes a
 
 The E2E scenario demonstrate how webMethods.io and Cumulocity can be used to build a fleetmanagment. The simulator of the Daimler Connecte Vehicle site simulates a daimer car.
 The reference data of the car as as the dynamic data: fuel status, location, mileage can be tramsmitted to Cumulocity IoT. The integration between these two API is achieved using the webMethoods.io platform.
-The E2E scenario is as follows: ![E2E]https://github.com/SoftwareAG/wmio-connector-connectedcar/blob/master/resources/E2E_complete_V01.png
+The E2E scenario is as follows: ![E2E](https://github.com/SoftwareAG/wmio-connector-connectedcar/blob/master/resources/E2E_complete_V01.png)
 
 The relevant integration flow to create a vehicle in cumulocity IoT looks as follows:
-![Integration flow]:https://github.com/SoftwareAG/wmio-connector-connectedcar/blob/master/resources/E2E_create_car_V01.png
+![Integration flow](https://github.com/SoftwareAG/wmio-connector-connectedcar/blob/master/resources/E2E_create_car_V01.png)
 
 ##Account for E2E Scenario
 1. Register for Cumulocity IoT account: https://www.softwareag.cloud/site/index.html#/
@@ -73,4 +73,8 @@ The id "mydaimlerprovider_XXXXXXXX" in oauth.json is replaced with the actual id
 
 ##Create integration flow in webMethods.io
 Now that the connector is uploaded you can use it to build an integration flow as shown on the screenshot in the beginning.
+______________________
+These tools are provided as-is and without warranty or support. They do not constitute part of the Software AG product suite. Users are free to use, fork and modify them, subject to the license agreement. While Software AG welcomes contributions, we cannot guarantee to include every contribution in the master project.	
+
+Contact us at [TECHcommunity](mailto:technologycommunity@softwareag.com?subject=Github/SoftwareAG) if you have any questions.
 
