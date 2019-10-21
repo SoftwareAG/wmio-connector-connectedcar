@@ -25,6 +25,7 @@ The connector allows the following actions:
 2. getodometer: For getting the latest mileage of an vehicle by id
 3. getvehiclebyid: For getting the reference data (name, model, ...) of an vehicle by id
 4. getvehicles: For getting the list of all vehicles (simulator only lets you generate one vehicle)
+These actons are to used in the E2E workflow in webmethios.io.
 
 ### Install wmio cli
 Chech out information for npm modul wmiocli: https://www.npmjs.com/package/@webmethodsio/wmiocli and install modul
