@@ -8,7 +8,7 @@ The E2E scenario is as follows: ![E2E](https://github.com/SoftwareAG/wmio-connec
 The relevant integration flow to create a vehicle in cumulocity IoT looks as follows:
 ![Integration flow](https://github.com/SoftwareAG/wmio-connector-connectedcar/blob/master/resources/E2E_create_car_V01.png)
 
-##Account for E2E Scenario
+## Account for E2E Scenario
 1. Register for Cumulocity IoT account: https://www.softwareag.cloud/site/index.html#/
 2. Register for webMethods.io integration account: https://www.softwareag.cloud/site/index.html#/
 3. Register for an developer account to use the Daimler Connected Vehicle (experimental) API: https://developer.mercedes-benz.com/
@@ -18,16 +18,16 @@ The relevant integration flow to create a vehicle in cumulocity IoT looks as fol
 2. Open console: https://developer.mercedes-benz.com/console
 3. Register your app and `Client ID` and ` Client Secret`. Leave the field ` Redirect URLs` empty. This needs to be filled out whit information generated in a later step.
 
-##Build an upload connector in webMethods.io
+## Build an upload connector in webMethods.io
 
-###Install wmio cli
+### Install wmio cli
 Chech out information for npm modul wmiocli: https://www.npmjs.com/package/@webmethodsio/wmiocli and install modul
 
 ```
 >npm i @webmethodsio/wmiocli -g
 ```
 
-###Login to wmio
+### Login to wmio
 ```
 >wmio login
 Enter Tenant URL eg: (https://wmiodemo.webmethods.io): https://YOUR:WEBMETHODS.IO-URL
@@ -37,14 +37,14 @@ Loading...
 [SYSTEM:] Successfully logged in.
 ```
 
-###Install dependant npm packages locally
+### Install dependant npm packages locally
 
 ```
 >cd source
 >npm install
 ```
 
-###Create your authprovider
+### Create your authprovider
 ```
 >wmio auth
 ? Select auth type oauth
@@ -57,12 +57,12 @@ Please provide name for your oauth: mydaimlerprovider
 The returned URL needs to be updated as "redirectURL" in authentication.js.
 The id "mydaimlerprovider_XXXXXXXX" in oauth.json is replaced with the actual id of the oauth provider.
 
-###Deploy your authprovider
+### Deploy your authprovider
 ```
 >wmio oauth deploy
 ```
 
-###Deploy connector
+### Deploy connector
 
 ```
 >wmio deploy
@@ -71,7 +71,7 @@ The id "mydaimlerprovider_XXXXXXXX" in oauth.json is replaced with the actual id
 ...
 ```
 
-##Create integration flow in webMethods.io
+## Create integration flow in webMethods.io
 Now that the connector is uploaded you can use it to build an integration flow as shown on the screenshot in the beginning.
 ______________________
 These tools are provided as-is and without warranty or support. They do not constitute part of the Software AG product suite. Users are free to use, fork and modify them, subject to the license agreement. While Software AG welcomes contributions, we cannot guarantee to include every contribution in the master project.	
