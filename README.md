@@ -20,6 +20,12 @@ The relevant integration flow to create a vehicle in cumulocity IoT looks as fol
 
 ## Build an upload connector in webMethods.io
 
+The connector allows the following actions:
+1. getlocation: For getting the latest location of an vehicle by id
+2. getodometer: For getting the latest mileage of an vehicle by id
+3. getvehiclebyid: For getting the reference data (name, model, ...) of an vehicle by id
+4. getvehicles: For getting the list of all vehicles (simulator only lets you generate one vehicle)
+
 ### Install wmio cli
 Chech out information for npm modul wmiocli: https://www.npmjs.com/package/@webmethodsio/wmiocli and install modul
 
