@@ -1,0 +1,11 @@
+{
+  "name": "daimlerconnectedcar",
+  "version": "1.0.0",
+  "description": "Connector for Daimler connected_vehicle_experimental_api, https://developer.mercedes-benz.com/apis/connected_vehicle_experimental_api\",",
+  "dependencies": {
+    "@builtioflow/cli-sdk": "*",
+    "@webmethodsio/cli-sdk": "^1.0.0",
+    "moment": "^2.24.0",
+    "request": "2.55.0"
+  }
+}

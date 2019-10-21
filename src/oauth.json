@@ -1,0 +1,43 @@
+{
+  "type": "oauth2",
+  "title": "daimler",
+  "clientId": "TO_BE_UPDATED",
+  "clientSecret": "TO_BE_UPDATED",
+  "authURL": "https://api.secure.mercedes-benz.com/oidc10/auth/oauth/v2/authorize",
+  "tokenURL": "https://api.secure.mercedes-benz.com/oidc10/auth/oauth/v2/token",
+  "authQueryParams": {
+      "response_type": "code",
+      "prompt": "login,consent"
+  },
+  "tokenParams": {
+    "method": "",
+    "headers": {},
+    "data": {
+      "client_id": "{client_id}",
+      "client_secret": "{client_secret}",
+      "redirect_uri": "{redirect_uri}",
+      "grant_type": "authorization_code"
+    }
+  },
+  "refreshParams": {
+    "client_id": "{client_id}",
+    "client_secret": "{client_secret}",
+    "redirect_uri": "{redirect_uri}",
+    "grant_type": "refresh_token"
+  },
+  "requiredParams": [
+  ],
+  "refreshURL": "https://api.secure.mercedes-benz.com/oidc10/auth/oauth/v2/token", 
+  "scope": {
+    "mb:vehicle:status:general mb:user:pool:reader": "mb:vehicle:status:general mb:user:pool:reader"
+  },
+  "validate": {
+    "url": "ANY API URL TO VALIDATE TOKEN OF THIRD PARTY SERVICE",
+    "headers": {
+      "Authorization": "Bearer {access_token}"
+    },
+    "query": { 
+    }
+  },
+  "redirectURL": "TO_BE_UPDATED"
+}

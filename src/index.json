@@ -1,0 +1,15 @@
+{
+  "name": "DaimlerConnectedCar",
+  "description": "Connector for Daimler connected_vehicle_experimental_api, https://developer.mercedes-benz.com/apis/connected_vehicle_experimental_api\",",
+  "triggers": [],
+  "actions": [
+    "/v1/getvehicles",
+    "/v1/getvehiclebyid",
+    "/v1/getlocation",
+    "/v1/getodometer"
+  ],
+  "version": 1,
+  "auth_type": "oauth",
+  "docs_link": "http://docs.example.com",
+  "oauth_provider": "TO_BE_UPDATED_WHEN_CALLING_wmio auth, mydaimlerprovider_XXXXXXXX",
+}
