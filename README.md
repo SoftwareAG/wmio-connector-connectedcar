@@ -5,8 +5,28 @@ The E2E scenario demonstrate how webMethods.io and Cumulocity can be used to bui
 The reference data of the car as as the dynamic data: fuel status, location, mileage can be tramsmitted to Cumulocity IoT. The integration between these two API is achieved using the webMethoods.io platform.
 The E2E scenario is as follows: ![E2E](https://github.com/SoftwareAG/wmio-connector-connectedcar/blob/master/resources/E2E_complete_V01.png)
 
-The relevant integration flow to create a vehicle in cumulocity IoT looks as follows:
+The relevant integration flow to create a vehicle in cumulocity IoT looks as follows. This flow uses the following connectors:
+1. Cumulocity:
+    1. Step 1: Select Functional Area: Inventory
+    2. Step 2: Select the Operation: Select the Operation
+2. Connected Car:
+    1. Getvehicles
+    2. Getvehiclesbyid
+
 ![Integration flow](https://github.com/SoftwareAG/wmio-connector-connectedcar/blob/master/resources/E2E_create_car_V01.png)
+
+
+The relevant integration flow to update the location in cumulocity IoT looks as follows. This flow uses the following connectors:
+1. Cumulocity GetIdByExternalId :
+    1. Step 1: Select Functional Area: Identity
+    2. Step 2: Select the Operation: Get An External ID
+1. Cumulocity Update Location:
+    1. Step 1: Select Functional Area: Events
+    2. Step 2: Select the Operation: Create an new event.
+2. Connected Car Getlocation:
+    1. Getlocation  
+
+![Integration flow](https://github.com/SoftwareAG/wmio-connector-connectedcar/blob/master/resources/E2E_update_location_V01.png)
 
 ## Account for E2E Scenario
 1. Register for Cumulocity IoT account: https://www.softwareag.cloud/site/index.html#/
