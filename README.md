@@ -53,6 +53,8 @@ The relevant integration flow to update the mileage in cumulocity IoT looks as f
 The inegration flow is triggered through a webhook:
 ![Integration flow](https://github.com/SoftwareAG/wmio-connector-connectedcar/blob/master/resources/E2E_update_odometer_webhook_V02.png)
 
+>NOTE: Since the vehicle simulation needs to be updated in a shorter frequency than 5 minutes (minimum for wmio standard scheduled trigger) an external phython script is provided https://github.com/SoftwareAG/wmio-connector-connectedcar/blob/master/resources/trigger_update.py . This script triggers the webhooks every 20 seconds.
+
 ## Account for E2E Scenario
 1. Register for Cumulocity IoT account: https://www.softwareag.cloud/site/index.html#/
 2. Register for webMethods.io integration account: https://www.softwareag.cloud/site/index.html#/
