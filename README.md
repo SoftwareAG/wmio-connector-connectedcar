@@ -41,6 +41,12 @@ The relevant integration flow to update the location in cumulocity IoT looks as 
 2. Open console: https://developer.mercedes-benz.com/console
 3. Register your app and `Client ID` and ` Client Secret`. Leave the field ` Redirect URLs` empty. This needs to be filled out whit information generated in a later step.
 
+## Create simulation Daimler car simulator
+1. After login access simulator: https://car-simulator.developer.mercedes-benz.com
+2. Define simulation for your vehicle, as shown below:
+![Integration flow](https://github.com/SoftwareAG/wmio-connector-connectedcar/blob/master/resources/E2E_simulator_V01.png)
+
+
 ## Build an upload connector in webMethods.io
 
 The connector allows the following actions:
