@@ -6,10 +6,13 @@ The reference data of the car as as the dynamic data: fuel status, location, mil
 The E2E scenario is as follows: ![E2E](https://github.com/SoftwareAG/wmio-connector-connectedcar/blob/master/resources/E2E_complete_V01.png)
 
 The relevant integration flow to create a vehicle in cumulocity IoT looks as follows. This flow uses the following connectors:
-1. Cumulocity:
+1. Cumulocity CreateVehicle:
     1. Step 1: Select Functional Area: Inventory
     2. Step 2: Select the Operation: Select the Operation
-2. Connected Car:
+2. Cumulocity UpdateExternalId:
+    1. Step 1: Select Functional Area: Identity
+    2. Step 2: Select the Operation: Create an External ID
+3. Connected Car:
     1. Getvehicles
     2. Getvehiclesbyid
 
