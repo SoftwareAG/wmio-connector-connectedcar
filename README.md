@@ -44,11 +44,14 @@ The relevant integration flow to update the mileage in cumulocity IoT looks as f
     2. Step 2: Select the Operation: Get An External ID
 1. Cumulocity CreateOdometerMeasurement:
     1. Step 1: Select Functional Area: Measurements
-    2. Step 2: Select the Operation: Create an new event.
+    2. Step 2: Select the Operation: Create an new measurement.
 2. Connected Car Getodometer:
     1. Getodometer  
 
 ![Integration flow](https://github.com/SoftwareAG/wmio-connector-connectedcar/blob/master/resources/E2E_update_odometer_V01.png)
+
+The inegration flow is triggered through a webhook:
+![Integration flow](https://github.com/SoftwareAG/wmio-connector-connectedcar/blob/master/resources/E2E_update_odometer_webhook_V02.png)
 
 ## Account for E2E Scenario
 1. Register for Cumulocity IoT account: https://www.softwareag.cloud/site/index.html#/
