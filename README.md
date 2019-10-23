@@ -5,6 +5,10 @@ The E2E scenario demonstrate how webMethods.io and Cumulocity can be used to bui
 The reference data of the car as as the dynamic data: fuel status, location, mileage can be tramsmitted to Cumulocity IoT. The integration between these two API is achieved using the webMethoods.io platform.
 The E2E scenario is as follows: ![E2E](https://github.com/SoftwareAG/wmio-connector-connectedcar/blob/master/resources/E2E_complete_V01.png)
 
+## wmio Integration flows
+
+### Create vehicle
+
 The relevant integration flow to create a vehicle in cumulocity IoT looks as follows. This flow uses the following connectors:
 1. Cumulocity CreateVehicle:
     1. Step 1: Select Functional Area: Inventory
@@ -18,6 +22,7 @@ The relevant integration flow to create a vehicle in cumulocity IoT looks as fol
 
 ![Integration flow](https://github.com/SoftwareAG/wmio-connector-connectedcar/blob/master/resources/E2E_create_car_V01.png)
 
+### Update location
 
 The relevant integration flow to update the location in cumulocity IoT looks as follows. This flow uses the following connectors:
 1. Cumulocity GetIdByExternalId :
@@ -30,6 +35,20 @@ The relevant integration flow to update the location in cumulocity IoT looks as 
     1. Getlocation  
 
 ![Integration flow](https://github.com/SoftwareAG/wmio-connector-connectedcar/blob/master/resources/E2E_update_location_V01.png)
+
+### Update odometer (mileage)
+
+The relevant integration flow to update the mileage in cumulocity IoT looks as follows. This flow uses the following connectors:
+1. Cumulocity GetIdByExternalId :
+    1. Step 1: Select Functional Area: Identity
+    2. Step 2: Select the Operation: Get An External ID
+1. Cumulocity CreateOdometerMeasurement:
+    1. Step 1: Select Functional Area: Measurements
+    2. Step 2: Select the Operation: Create an new event.
+2. Connected Car Getodometer:
+    1. Getodometer  
+
+![Integration flow](https://github.com/SoftwareAG/wmio-connector-connectedcar/blob/master/resources/E2E_update_odometer_V01.png)
 
 ## Account for E2E Scenario
 1. Register for Cumulocity IoT account: https://www.softwareag.cloud/site/index.html#/
