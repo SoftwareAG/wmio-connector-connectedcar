@@ -3,7 +3,9 @@ This sample demonstrates how to build a custom connector for wmio. It includes a
 
 The E2E scenario demonstrate how webMethods.io and Cumulocity can be used to build a fleetmanagment. The simulator of the Daimler Connecte Vehicle site simulates a daimer car.
 The reference data of the car as as the dynamic data: fuel status, location, mileage can be tramsmitted to Cumulocity IoT. The integration between these two API is achieved using the webMethoods.io platform.
-The E2E scenario is as follows: ![E2E](https://github.com/SoftwareAG/wmio-connector-connectedcar/blob/master/resources/E2E_complete_V01.png)
+The E2E scenario is as follows: ![E2E](https://github.com/SoftwareAG/wmio-connector-connectedcar/blob/master/resources/E2E_complete_V01.png)  
+
+The connector call the connected vehicleexperimental API. This API is secured with OAuth 2.0. Therefore a oauth2 provider needs to be created. The specific documentation on how this works is availalble under: https://developer.mercedes-benz.com/apis/connected_vehicle_experimental_api/docs#_authentication
 
 ## wmio Integration flows
 
@@ -50,7 +52,7 @@ The relevant integration flow to update the mileage in cumulocity IoT looks as f
 
 ![Integration flow](https://github.com/SoftwareAG/wmio-connector-connectedcar/blob/master/resources/E2E_update_odometer_V01.png)
 
-The inegration flow is triggered through a webhook:
+The integration flow is triggered through a webhook:
 ![Integration flow](https://github.com/SoftwareAG/wmio-connector-connectedcar/blob/master/resources/E2E_update_odometer_webhook_V02.png)
 
 >NOTE: Since the vehicle simulation needs to be updated in a shorter frequency than 5 minutes (minimum for wmio standard scheduled trigger) an external phython script is provided https://github.com/SoftwareAG/wmio-connector-connectedcar/blob/master/resources/trigger_update.py . This script triggers the webhooks every 20 seconds.
@@ -64,6 +66,9 @@ The inegration flow is triggered through a webhook:
 1. Login to https://developer.mercedes-benz.com/
 2. Open console: https://developer.mercedes-benz.com/console
 3. Register your app and `Client ID` and ` Client Secret`. Leave the field ` Redirect URLs` empty. This needs to be filled out whit information generated in a later step.
+
+The following screenshot shows the UI in the daimler developer portal:
+![Developer Console](https://github.com/SoftwareAG/wmio-connector-connectedcar/blob/master/resources/E2E_console_app_V02.png)
 
 ## Create simulation Daimler car simulator
 1. After login access simulator: https://car-simulator.developer.mercedes-benz.com
@@ -114,8 +119,19 @@ Please provide name for your oauth: mydaimlerprovider
 [TENANT:USER] OAuth configuration file created successfully. Kindly populate the oauth.json file
 [TENANT:USER] Kindly set redirect url as https://YOUR:WEBMETHODS.IO-URL/auth/oauth/mydaimlerprovider__XXXXXXXX/XXXXXXXXXXXXXXXXXX/return in your Oauth Application
 ```
-The returned URL needs to be updated as "redirectURL" in authentication.js.
-The id "mydaimlerprovider_XXXXXXXX" in oauth.json is replaced with the actual id of the oauth provider.
+The returned URL needs to is written as "redirectURL" in authentication.js. Nothing needs to be modified in this file.
+Another file `oauth.json` is generated.
+1. Back up this file by renaming `oauth.json` to `oauth.json_gen`.
+2. copy the value of `redirectURL` from the newly renamed file `oauth.json_gen` 
+3. and place it in  - the by git provided - file `oauth.json_template` in line 49
+4. update value with the value from the Daimler developer console:
+```
+  "clientId": "TO_BE_UPDATED",
+  "clientSecret": "TO_BE_UPDATED",
+```
+5. finally save this file as `oauth.json`
+
+Now you are ready to deploy yor authprovider
 
 ### Deploy your authprovider
 ```
