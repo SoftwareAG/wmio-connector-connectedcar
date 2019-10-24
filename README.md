@@ -124,6 +124,9 @@ Another file `oauth.json` is generated.
 1. Back up this file by renaming `oauth.json` to `oauth.json_gen`.
 2. copy the value of `redirectURL` from the newly renamed file `oauth.json_gen` 
 3. and place it in  - the by git provided - file `oauth.json_template` in line 49
+```
+  "redirectURL": "TO_BE_UPDATED"
+```
 4. update value with the value from the Daimler developer console:
 ```
   "clientId": "TO_BE_UPDATED",
