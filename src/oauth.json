@@ -1,13 +1,17 @@
 {
   "type": "oauth2",
-  "title": "daimler",
+  "title": "mydaimlerprovider",
   "clientId": "TO_BE_UPDATED",
   "clientSecret": "TO_BE_UPDATED",
   "authURL": "https://api.secure.mercedes-benz.com/oidc10/auth/oauth/v2/authorize",
   "tokenURL": "https://api.secure.mercedes-benz.com/oidc10/auth/oauth/v2/token",
+  "preAuthProcessing": {
+  },
   "authQueryParams": {
       "response_type": "code",
       "prompt": "login,consent"
+  },
+  "preTokenProcessing": {
   },
   "tokenParams": {
     "method": "",
@@ -18,6 +22,9 @@
       "redirect_uri": "{redirect_uri}",
       "grant_type": "authorization_code"
     }
+  },  
+  "preRefreshProcessing": {
+
   },
   "refreshParams": {
     "client_id": "{client_id}",

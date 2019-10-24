@@ -15,13 +15,10 @@
 * See the License for the specific language governing permissions and
 * limitations under the License.
 */
-var request = require("request");
-var settings = require('../../settings.json');
-
 module.exports = {
 
   name: "getvehiclebyid",
-  oauth: 'daimler',
+  oauth: "mydaimlerprovider",
   title: "Getvehiclebyid",
 
   description: "",
@@ -118,6 +115,8 @@ module.exports = {
     // to access auth info use input.auth , eg: input.auth.username
     // and to return output use output callback like this output(null, { 'notice' : 'successful'})
     // your code here
+	var request = require("request");
+	var settings = require('../../settings.json');
     var options = {
       "method": "get",
       "url": settings.api_base_url + "/vehicles/" + input.vehicleId,
