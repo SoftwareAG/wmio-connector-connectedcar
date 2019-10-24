@@ -133,6 +133,7 @@ Another file `oauth.json` is generated.
   "clientSecret": "TO_BE_UPDATED",
 ```
 5. finally save this file as `oauth.json`
+6. you need to go back to your app in the Daimler developer portal and add the redirect URL in the web console in the field `Redirect URLs`.
 
 Now you are ready to deploy yor authprovider
 
